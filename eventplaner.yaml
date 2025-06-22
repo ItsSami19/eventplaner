@@ -31,13 +31,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/Error'
         '500':
           description: Server error
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ErrorResponse'
+                $ref: '#/components/schemas/Error'
 
     delete:
       summary: Delete all notifications for the authenticated user
@@ -1078,7 +1078,6 @@ paths:
                   data:
                     oneOf:
                       - $ref: "#/components/schemas/SurveyResponse"
-                      - type: "null"
                     description: "Survey info for a specific event (if eventId was provided)."
                   surveys:
                     type: array
@@ -2429,13 +2428,6 @@ components:
       properties:
         message:
           type: string
-
-    ErrorResponse:
-      type: object
-      properties:
-        error:
-          type: string
-
 
         error:
           type: string
